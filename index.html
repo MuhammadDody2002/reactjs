@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar React</title>
+      <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .text-succes {
+            color:blue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('app'))
+        // root.render(
+        //     React.createElement(
+        //         'h1',
+        //         {style : {color:'blue', 'font-family':'monstreat'}},
+        //         'Belajar React'
+        // //     )
+        // // )
+        // root.render(
+        // <>    
+        // <h1 className = 'text-succes'>belajar react</h1>
+        //     <p>Belajar React Menyenangkan</p>
+        // </>
+        // ) ;
+        function Header (props){ 
+            return <h1> Belajar React  {props.title} </h1>
+        }
+        function Footer (){
+            return <h6>&Copy; 2024</h6>
+        }
+        function Homepage(){
+            const mahasiswa = ["john", "Budi", "Andi"];
+            return <>
+            <Header/>
+            <Header title ="mudah"/>
+                        <Header title ="asik"/>
+            <p> Belajar React Menyenangkan</p>
+            <ul>
+                {
+                    mahasiswa.map((mhs) => (
+                        <li key={mhs}>{mhs}</li>
+                    ))
+                }
+                </ul>
+            <Footer/>
+            </>
+        }
+        root.render(<Homepage />);
+    </script>
+</body>
+</html>
